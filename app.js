@@ -30,9 +30,13 @@ function moveEverything(){
 }
 
 function drawEverything(){
-     
+    //Blanks out out the screen black
     colorRect(0,0, canvas.width, canvas.height,"black");
+
+    //Left player paddle
     colorRect(0,200,10, 100, 'white');
+
+    //Draws the ball
     colorRect(ballX,100,10, 10,"red")
 
 }
