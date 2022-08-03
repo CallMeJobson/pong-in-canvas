@@ -30,20 +30,16 @@ function moveEverything(){
 }
 
 function drawEverything(){
-    
-    canvasContext.fillStyle = 'black';
-    //0 0 is the position of what we what to draw
-    canvasContext.fillRect(0,0,canvas.width, canvas.height);
+     
+    colorRect(0,0, canvas.width, canvas.height,"black");
+    colorRect(0,200,10, 100, 'white');
+    colorRect(ballX,100,10, 10,"red")
 
-    canvasContext.fillStyle = 'white';
-    //0 0 is the position of what we what to draw
-    canvasContext.fillRect(0,200,10, 100);
+}
 
-    canvasContext.fillStyle = 'red';
-    //0 0 is the position of what we what to draw
-    canvasContext.fillRect(ballX,100,10, 10);
 
-    
 
-    //Draw order is important 
+function colorRect(leftX, topY, width, height, drawColor){
+    canvasContext.fillStyle = drawColor;
+    canvasContext.fillRect(leftX,topY, width, height);
 }
