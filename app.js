@@ -1,11 +1,12 @@
 var canvas;
 var canvasContext
 var ballX = 50
+var ballSpeedX = 15;
 window.onload = function(){
     canvas = document.getElementById("gameCanvas");
     canvasContext = canvas.getContext("2d");
 
-
+    
     var framesPerSecond = 30
     setInterval(function(){
         moveEverything();
@@ -17,7 +18,15 @@ window.onload = function(){
 
 
 function moveEverything(){
-    ballX += 5;
+    ballX += ballSpeedX;
+    
+    //Collision detection 
+    if(ballX > canvas.width){
+        ballSpeedX = -ballSpeedX
+    }
+    if(ballX < 0){
+        ballSpeedX = -ballSpeedX
+    }
 }
 
 function drawEverything(){
